@@ -1,0 +1,7 @@
+{
+  "name": "git-manager",
+  "description": "Unified Git & GitHub management with smart routing between GitHub MCP and gh CLI. Covers local git operations, PR/issue management, CI/CD, releases, and repository management.",
+  "author": {
+    "name": "User"
+  }
+}
