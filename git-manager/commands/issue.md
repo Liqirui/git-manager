@@ -1,7 +1,7 @@
 ---
 description: "Issue management: list, create, view, close, comment, label"
 argument-hint: "[list|create|view|close|comment|label] [number] [args]"
-allowed-tools: Bash, Glob, Grep, Read
+allowed-tools: Bash(gh issue:*), Bash(git remote:*), Read
 ---
 
 # /git:issue

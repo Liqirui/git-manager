@@ -1,7 +1,7 @@
 ---
 description: "Verify environment dependencies and plugin installation"
 argument-hint: ""
-allowed-tools: Bash, Read
+allowed-tools: Bash(git --version), Bash(gh --version), Bash(gh auth:*), Bash(uvx:*), Bash(uv --version), PowerShell, Read
 ---
 
 # /git:setup

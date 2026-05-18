@@ -1,7 +1,7 @@
 ---
 description: "Pull request operations: create, list, view, merge, review, diff, comment"
 argument-hint: "[create|list|view|merge|review|diff|comment] [number] [args]"
-allowed-tools: Bash, Glob, Grep, Read
+allowed-tools: Bash(gh pr:*), Bash(git remote:*), Bash(git branch:*), Read
 ---
 
 # /git:pr

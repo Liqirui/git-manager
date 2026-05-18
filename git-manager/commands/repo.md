@@ -1,7 +1,7 @@
 ---
 description: "Repository operations: create, search, clone, fork, delete"
 argument-hint: "[create|search|clone|fork|delete] [name] [args]"
-allowed-tools: Bash, Read
+allowed-tools: Bash(gh repo:*), Bash(gh search:*), Bash(gh api:*), Bash(gh auth:*), Read
 ---
 
 # /git:repo
