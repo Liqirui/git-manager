@@ -1,5 +1,6 @@
 # GitHub MCP 工具速查
 
+> 工具由 `github` 插件提供，git-manager 复用这些工具。
 > 工具名前缀 `mcp__plugin_github_github__` 省略，以短名列出。
 > ⚠ 标记的工具在当前 MCP 版本中**不存在**，相关操作需降级到 gh CLI。
 
