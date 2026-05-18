@@ -1,7 +1,7 @@
 ---
 description: "Release management: list, create, view, delete"
 argument-hint: "[list|create|view|delete] [tag] [args]"
-allowed-tools: Bash, Read
+allowed-tools: Bash(gh release:*), Bash(gh api:*), Read
 ---
 
 # /git:release

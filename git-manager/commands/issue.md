@@ -40,14 +40,13 @@ Parse `$ARGUMENTS`:
 
 ## Sub-command: create
 
-### MCP path:
-1. Call `issue_write` with method `create`:
-   - title: from `--title` in `$ARGUMENTS`
-   - body: from `--body`
-   - labels: from `--label`
+### Tool: gh CLI only (MCP has no issue write tool)
 
-### gh fallback:
-1. `gh issue create --title "<title>" --body "<body>" --label "<label>"`
+1. Extract title from `--title` in `$ARGUMENTS`
+2. Extract body from `--body`
+3. Extract labels from `--label`
+4. Run: `gh issue create --title "<title>" --body "<body>" --label "<label>"`
+5. Report created issue
 
 ## Sub-command: view
 
@@ -60,13 +59,12 @@ Parse `$ARGUMENTS`:
 
 ## Sub-command: close
 
-### MCP path:
-1. Call `issue_write` with method `update`:
-   - state: "closed"
-   - state_reason: from `--reason` (default: completed)
+### Tool: gh CLI only (MCP has no issue write tool)
 
-### gh fallback:
-1. `gh issue close <number> --reason <reason>`
+1. Extract issue number from `$ARGUMENTS`
+2. Extract reason from `--reason` (default: completed)
+3. Run: `gh issue close <number> --reason <reason>`
+4. Report success
 
 ## Sub-command: comment
 
@@ -78,10 +76,9 @@ Parse `$ARGUMENTS`:
 
 ## Sub-command: label
 
-### MCP path:
-1. If `--add`: update issue to add label
-2. If `--remove`: update issue to remove label
+### Tool: gh CLI only (MCP has no issue write tool)
 
-### gh fallback:
-1. If `--add`: `gh issue edit <number> --add-label <label>`
-2. If `--remove`: `gh issue edit <number> --remove-label <label>`
+1. Extract issue number from `$ARGUMENTS`
+2. If `--add`: `gh issue edit <number> --add-label <label>`
+3. If `--remove`: `gh issue edit <number> --remove-label <label>`
+4. Report result

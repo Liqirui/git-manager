@@ -1,7 +1,7 @@
 ---
 description: "CI/CD operations: status, rerun, logs, watch"
 argument-hint: "[status|rerun|logs|watch] [run-id]"
-allowed-tools: Bash, Read
+allowed-tools: Bash(gh run:*), Bash(gh workflow:*), Read
 ---
 
 # /git:ci

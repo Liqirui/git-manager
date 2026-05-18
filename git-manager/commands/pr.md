@@ -78,13 +78,12 @@ Parse `$ARGUMENTS`:
 
 ## Sub-command: review
 
-### MCP path:
-1. Call `pull_request_review_write` with:
-   - event: from `--event` (default: COMMENT)
-   - body: from `--body` or auto-generated
+### Tool: gh CLI only (MCP has no review write tool)
 
-### gh fallback:
-1. `gh pr review <number> --<event> --body "<body>"`
+1. Extract event from `--event` (default: comment)
+2. Extract body from `--body` or auto-generate
+3. Run: `gh pr review <number> --<event> --body "<body>"`
+4. Report result
 
 ## Sub-command: diff
 
