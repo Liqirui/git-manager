@@ -32,9 +32,30 @@ If `gh auth status` returns exit code 0, gh CLI is available. Use `GH_TOKEN` env
 
 ## Routing Rules Summary
 
-- **MCP preferred:** PR list/view/create/merge, Issue list/view/comment, Code search, File ops, Repo create/search/fork, Branch list
-- **gh CLI preferred:** CI/CD, Release, Issue create/close/label, PR review, Clone, Delete repo, Any API
-- **git native:** Commit, Branch create/delete/switch, Pull, Push, Fetch, Rebase
+### MCP preferred (with gh CLI fallback)
+- **PR:** create, list, view, merge, diff, comment
+- **Issue:** list, view, comment
+- **Repo:** create, search, fork
+- **Branch:** list
+- **Code search, File ops**
+
+### gh CLI only (no MCP alternative)
+- **Issue:** create, close, label (MCP `issue_write` does not exist)
+- **PR:** review (MCP `pull_request_review_write` does not exist)
+- **CI/CD:** status, rerun, logs, watch
+- **Release:** create (MCP `create_release` does not exist), delete
+- **Repo:** clone, delete
+
+### gh CLI preferred (with MCP fallback)
+- **Release:** list → MCP `list_releases`, view → MCP `get_release_by_tag`
+
+### git native only
+- **Commit:** add, commit, status, diff
+- **Sync:** pull, push, fetch, rebase
+
+### git native preferred (with MCP fallback)
+- **Branch:** create → MCP `create_branch`, delete → MCP (needs extra call)
+- **Branch:** switch, clean — pure git, no fallback
 
 ## Fallback Behavior
 
@@ -42,12 +63,3 @@ When falling back:
 1. Log which tool was used: "[tool] 不可用，已使用 [fallback]"
 2. Verify the operation succeeded
 3. For write operations, confirm the result matches expectations
-
-## Known Limitations
-
-Some MCP tools referenced in documentation do not exist in the current GitHub MCP server version:
-- `issue_write` — does not exist, use `gh issue create/close/edit` instead
-- `pull_request_review_write` — does not exist, use `gh pr review` instead
-- `create_release` — does not exist, use `gh release create` instead
-
-For these operations, gh CLI is the only option.
