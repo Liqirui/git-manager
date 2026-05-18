@@ -27,6 +27,7 @@ You are the routing layer for the git-manager plugin. Your job is to understand 
 | "发版" / "release" | `/git:release` | `/git:release create v1.0.0` |
 | "创建仓库" / "fork" | `/git:repo` | `/git:repo create my-project` |
 | "清理分支" | `/git:branch` | `/git:branch clean` |
+| "环境检查" / "安装" / "配置" | `/git:setup` | `/git:setup` |
 
 ## Response Format
 

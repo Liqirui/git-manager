@@ -16,7 +16,7 @@
 | list | MCP `list_pull_requests` | `gh pr list --json` | MCP 支持分页 |
 | view | MCP `pull_request_read` | `gh pr view` | MCP 返回完整数据 |
 | merge | MCP `merge_pull_request` | `gh pr merge` | MCP 支持三种合并方式 |
-| review | MCP `pull_request_review_write` | `gh pr review` | MCP 结构化提交 |
+| review | `gh pr review` | 无 | MCP 无 review 写入工具 |
 | diff | MCP `pull_request_read(get_diff)` | `gh pr diff` | 均可 |
 | comment | MCP `add_issue_comment` | `gh pr comment` | MCP 统一 issue/PR 评论 |
 
@@ -24,11 +24,11 @@
 | 子操作 | 首选 | 降级 | 原因 |
 |--------|------|------|------|
 | list | MCP `list_issues` | `gh issue list` | MCP 支持过滤 |
-| create | MCP `issue_write(create)` | `gh issue create` | MCP 结构化 |
+| create | `gh issue create` | 无 | MCP 无 issue 写入工具 |
 | view | MCP `issue_read(get)` | `gh issue view` | MCP 返回评论 |
-| close | MCP `issue_write(update)` | `gh issue close` | MCP 支持 state_reason |
+| close | `gh issue close` | 无 | MCP 无 issue 写入工具 |
 | comment | MCP `add_issue_comment` | `gh issue comment` | 均可 |
-| label | MCP `issue_write` | `gh issue edit --add-label` | 均可 |
+| label | `gh issue edit --add-label` | 无 | MCP 无 issue 写入工具 |
 
 ### CI/CD 操作
 | 子操作 | 首选 | 降级 | 原因 |
@@ -42,7 +42,7 @@
 | 子操作 | 首选 | 降级 | 原因 |
 |--------|------|------|------|
 | list | `gh release list` | MCP `list_releases` | gh 更完整 |
-| create | `gh release create` | MCP `create_release` | gh 支持 assets |
+| create | `gh release create` | 无 | MCP 无 release 创建工具 |
 | view | `gh release view` | MCP `get_release_by_tag` | 均可 |
 | delete | `gh release delete` | 无 | MCP 不支持删除 |
 
